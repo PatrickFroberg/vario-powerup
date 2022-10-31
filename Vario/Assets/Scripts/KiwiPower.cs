@@ -4,7 +4,7 @@ using UnityEngine;
 public class KiwiPower : MonoBehaviour
 {
     public float PowerMultiplier = 1.5f;
-    public GameObject CollecEffect;
+    public GameObject CollectEffect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +14,7 @@ public class KiwiPower : MonoBehaviour
 
     private void Collect(Collider2D player)
     {
-        Instantiate(CollecEffect, transform.position, transform.rotation);
+        Instantiate(CollectEffect, transform.position, transform.rotation);
 
         PlayerSkinManager.Instance.ChangeSkin(PlayerSkinManager.Instance.RunSkin);
 

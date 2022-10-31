@@ -5,7 +5,7 @@ public class BananaPower : MonoBehaviour
 {
     public float PowerMultiplier = 1.5f;
     public float PowerDuration = 5f;
-    public GameObject CollecEffect;
+    public GameObject CollectEffect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +16,7 @@ public class BananaPower : MonoBehaviour
     private IEnumerator Collect(Collider2D player)
     {
         //Boom
-        Instantiate(CollecEffect, transform.position, transform.rotation);
+        Instantiate(CollectEffect, transform.position, transform.rotation);
 
         //PowerUp
         PlayerSkinManager.Instance.ChangeSkin(PlayerSkinManager.Instance.JumpSkin);

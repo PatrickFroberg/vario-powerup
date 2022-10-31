@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
         _playerStats = GetComponent<PlayerStats>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();    
+
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -42,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
     bool GroundCheck() 
     { 
+        if (_playerStats.IsWitch == true)
+            return true;
+
         return Physics2D.CapsuleCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0f, 0f, Vector2.down, 0.5f, _groundLayer); 
     }
 }

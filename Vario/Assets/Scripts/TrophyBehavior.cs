@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TrophyBehavior : MonoBehaviour
 {
-    public GameObject CollecEffect;
+    public GameObject CollectEffect;
     public Text WinnerText;
 
     private void Start()
@@ -19,7 +19,7 @@ public class TrophyBehavior : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
-            Instantiate(CollecEffect, transform.position, transform.rotation);
+            Instantiate(CollectEffect, transform.position, transform.rotation);
             collision.gameObject.GetComponent<PlayerController>().enabled = false;
 
             WinnerText.enabled = true;
