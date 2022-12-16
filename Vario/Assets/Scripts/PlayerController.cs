@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     PlayerStats _playerStats;
 
+    public ParticleSystem playerJump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +38,10 @@ public class PlayerController : MonoBehaviour
             _spriteRenderer.flipX = false;
 
         if (jump && GroundCheck())
+        {
+            playerJump.Play();
             _rigidbody.AddForce(Vector3.up * _playerStats.JumpPower);
-
-
+        }
     }
 
     bool GroundCheck() 

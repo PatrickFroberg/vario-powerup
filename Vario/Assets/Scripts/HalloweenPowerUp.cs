@@ -17,7 +17,7 @@ public class HalloweenPowerUp : MonoBehaviour
     private IEnumerator Collect(Collider2D player)
     {
         //Boom
-        Instantiate(CollectEffect, transform.position, transform.rotation);
+        Instantiate(CollectEffect, transform.position, new Quaternion(-90f,0f,0f,0f));
 
         //PowerUp
         PlayerStats stats = player.GetComponent<PlayerStats>();
